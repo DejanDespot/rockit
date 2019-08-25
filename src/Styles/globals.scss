@@ -11,19 +11,21 @@ $break-xs: 480px;
 //--colors--//
 
 $colors: (
-  turquoise: #01abc0,
-  turquoiseLight : #00a3c7,
-  paleBlue: #008ebb,
   white: #ffffff,
-  lightGray: #eeeeee,
-  darkGray: #4a4a4a,
+  lightGray: #272727,
   midGray: #9E9E9E,
+  darkGray: #181818,
   errorRed: #f44336
 );
 
 //--functions--//
 @function color($key) {
   @return map-get($colors, $key);
+}
+
+//--mixins--//
+@mixin border-box {
+  box-sizing: border-box;
 }
 
 //--globally available classes--//
@@ -40,13 +42,16 @@ $colors: (
 .fade-enter {
   opacity: 0.01;
 }
+
 .fade-enter-active {
   opacity: 1;
   transition: opacity 1000ms ease-in;
 }
+
 .fade-exit {
   opacity: 1;
 }
+
 .fade-exit-active {
   opacity: 0.01;
   transition: opacity 1000ms ease-in;

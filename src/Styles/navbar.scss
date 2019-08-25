@@ -1,0 +1,63 @@
+@import "./globals";
+
+.navBar {
+  width: 100%;
+  height: 60px;
+  background: rgba(color(lightGray), 0.54);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  @include border-box();
+
+  .navBlock {
+    display: flex;
+    align-items: center;
+
+    .backButton {
+      height: 18px;
+    }
+
+    .logoSection {
+      img {
+        height: 26px;
+      }
+
+      .title {
+        color: rgba(color(white), 0.8);
+        text-transform: uppercase;
+        font-family: 'Anton', sans-serif !important;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        margin-left: 10px;
+        margin-right: 40px;
+      }
+    }
+
+    .dropdownGroup {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      transition: filter 300ms ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(300%);
+      }
+
+      .userName {
+        font-weight: 300;
+        font-size: 11px;
+        color: rgba(color(white), 0.54);
+      }
+
+      .dropdownHandle {
+        transform: rotate(-90deg);
+        height: 14px;
+        margin-left: 10px;
+        margin-right: 4px;
+      }
+    }
+  }
+}
