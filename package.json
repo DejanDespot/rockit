@@ -1,0 +1,20 @@
+{
+  "name": "rockit",
+  "version": "1.0.0",
+  "description": "# Installation Guide * Install Node and NPM on your machine if not already present. [https://nodejs.org/en/] *Installing Node will install NPM alongside* * Run `npm install` in the root folder where you cloned the Rockit GIT repo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DejanDespot/rockit.git"
+  },
+  "keywords": [],
+  "author": "Dejan Despot <dejandespot7@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DejanDespot/rockit/issues"
+  },
+  "homepage": "https://github.com/DejanDespot/rockit#readme"
+}
