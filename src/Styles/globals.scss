@@ -1,0 +1,58 @@
+@import "./fonts";
+@import "./animations";
+
+//--breakpoints--//
+
+$break-lg: 1200px;
+$break-md: 992px;
+$break-sm: 768px;
+$break-xs: 480px;
+
+//--colors--//
+
+$colors: (
+  turquoise: #01abc0,
+  turquoiseLight : #00a3c7,
+  paleBlue: #008ebb,
+  white: #ffffff,
+  lightGray: #eeeeee,
+  darkGray: #4a4a4a,
+  midGray: #9E9E9E,
+  errorRed: #f44336
+);
+
+//--functions--//
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+//--globally available classes--//
+.hide {
+  display: none !important;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+//--fade animations--//
+
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
+}
+
+/*
+strong {
+  font-weight: 800;
+}*/

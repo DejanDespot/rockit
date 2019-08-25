@@ -4,7 +4,8 @@
   "description": "# Installation Guide * Install Node and NPM on your machine if not already present. [https://nodejs.org/en/] *Installing Node will install NPM alongside* * Run `npm install` in the root folder where you cloned the Rockit GIT repo.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --open --mode development --hot",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,31 @@
   "bugs": {
     "url": "https://github.com/DejanDespot/rockit/issues"
   },
-  "homepage": "https://github.com/DejanDespot/rockit#readme"
+  "homepage": "https://github.com/DejanDespot/rockit#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.11",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "moment": "^2.24.0"
+  }
 }
