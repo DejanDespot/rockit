@@ -1,0 +1,60 @@
+@import "./globals";
+
+.sidebar {
+    width: 20%;
+    height: 82%;
+    background: #1F1E1E;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    color: rgba(color(white), 0.54);
+
+    .sideBlock {
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        .title {
+            margin-bottom: 15px;
+        }
+
+        img {
+            height: 20px;
+            align-items: flex-start;
+            color: rgba(color(white), 0.54);
+            margin-right: 10px;
+        }
+
+        .songArt {
+            height: 250px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+
+        .sideGroup {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: filter 300ms ease-in-out;
+
+            &:hover {
+                filter: brightness(1.75);
+                color: rgba(color(white), 1.75);
+            }
+        }
+
+        p {
+            margin-bottom: 12px;
+            line-height: 20px;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(1.75);
+                color: rgba(color(white), 1.75);
+            }
+        }
+    }
+}

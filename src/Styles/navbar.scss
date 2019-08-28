@@ -16,6 +16,10 @@
 
     .backButton {
       height: 18px;
+
+      &:hover {
+        filter: brightness(1.75);
+      }
     }
 
     .logoSection {
@@ -43,7 +47,7 @@
       cursor: pointer;
 
       &:hover {
-        filter: brightness(300%);
+        filter: brightness(1.75);
       }
 
       .userName {
