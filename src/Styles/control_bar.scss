@@ -1,0 +1,77 @@
+@import "./globals";
+
+.controlbar {
+    background: #1F1E1E;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+
+    .controlBlock {
+        display: flex;
+        align-items: center;
+
+        .prev, .next {
+            height: 20px;
+            transition: filter 300ms ease-in-out;
+
+            &:hover {
+                filter: brightness(1.75);
+            }
+        }
+
+        .play {
+            height: 50px;
+            margin: 0 20px;
+            transition: filter 300ms ease-in-out;
+
+            &:hover {
+                filter: brightness(1.75);
+            }
+        }
+
+        .timeline {
+            height: 80%;
+            width: 100%;
+        }
+    }
+
+    .controlBlock:first-of-type {
+        // width: 20%;
+        margin-left: 5%;
+    }
+
+    .controlBlock:last-of-type {
+        // width: 40%;
+        margin-right: 3%;
+
+        img {
+            height: 20px;
+            margin-right: 20px;
+            transition: filter 300ms ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(1.75);
+            }
+        }
+
+        .volumeBar {
+            height: 5px;
+            width: 150px;
+            background: #6E7177;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    }
+
+    .time {
+        width: 50%;
+
+        img {
+            width: 100%;
+            height: 80%;
+            align-self: center;
+            padding: 1% 0 1% 4%;
+        }
+    }
+}

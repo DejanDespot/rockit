@@ -1,6 +1,6 @@
 @import "./globals";
 
-.sidebar {
+.sideBar {
     width: 20%;
     height: 82%;
     background: #1F1E1E;
@@ -8,6 +8,7 @@
     flex-direction: column;
     padding: 1em;
     color: rgba(color(white), 0.54);
+    letter-spacing: 0.8px;
 
     .sideBlock {
         display: flex;
@@ -17,6 +18,7 @@
 
         .title {
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         img {
