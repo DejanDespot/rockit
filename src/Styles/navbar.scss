@@ -16,6 +16,7 @@
 
     .backButton {
       height: 18px;
+      transition: filter 300ms ease-in-out;
 
       &:hover {
         filter: brightness(1.75);

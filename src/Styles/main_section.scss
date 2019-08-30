@@ -1,0 +1,85 @@
+@import "./globals";
+
+.mainSection {
+    height: 100%;
+    width: 100%;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+
+    .mainBlock {
+        padding: 2em;
+        display: flex;
+
+        .mainImage {
+            height: 250px;
+        }
+
+        .infoAndButtons {
+            padding: 0 1em;
+            display: flex;
+            flex-direction: column;
+
+            .info {
+                color: #6E7177;
+                letter-spacing: 1px;
+
+                p {
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                }
+
+                .playlistName {
+                    text-transform: capitalize;
+                    font-size: 1.5em;
+                    color: white;
+                    margin-bottom: 10px;
+                }
+
+                .playlistNumbers {
+                    display: flex;
+                    
+                    div:last-of-type {
+                        margin-left: 1em;
+                    }
+                }
+            }
+
+            .buttons {
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+    
+                .play {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    background: #9B51E0;
+                    border-radius: 16px;
+                    color: white;
+                    height: 2.5em;
+                    width: 8em;
+                    transition: filter 300ms ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(1.2);
+                    }
+                }
+
+                img {
+                    height: 2.5em;
+                    margin-left: 2em;
+                    transition: filter 300ms ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(1.75);
+                    }
+                }
+            }
+        }
+    }
+}

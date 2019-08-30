@@ -4,4 +4,52 @@
   width: 100%;
   height: 100%;
   background: color(darkGray);
+
+  .middle {
+    display: flex;
+    height: calc(100% - 60px - 70px);
+    width: 100%;
+  }
+
+
+  // Would be MUCH nicer to handle the overall layout with CSS Grid, but
+  // for some reason it just doesn't work... At this moment!
+
+  // display: grid;
+  // grid-template-areas: "nav nav"
+  //                      "side main"
+  //                      "control control";
+  // grid-template-columns: 20% 80%;
+  // grid-auto-rows: 60px 82% 70px;
+
+  // .NavBar { grid-area: nav; }
+
+  // .SideBar { grid-area: side; }
+
+  // .MainSection { grid-area: main; }
+
+  // .ControlBar { grid-area: control; }
+
+  // grid-template-columns: 20% 80%;
+  // grid-auto-rows: 60px 82% 70px;
+
+  // .NavBar {
+  //   grid-column: 1 / span 2;
+  //   grid-row: 1 / 2;
+  // }
+
+  // .SideBar {
+  //   grid-column: 1 / 2;
+  //   grid-row: 1 / 3;
+  // }
+
+  // .MainSection {
+  //   grid-column: 2 / 3;
+  //   grid-row: 1 / 3;
+  // }
+
+  // .ControlBar {
+  //   grid-column: 1 / 3;
+  //   grid-row: 3 / 4;
+  // }
 }
