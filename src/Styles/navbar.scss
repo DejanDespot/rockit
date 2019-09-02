@@ -56,6 +56,13 @@
         font-weight: 300;
         font-size: 11px;
         color: rgba(color(white), 0.54);
+        transition: color 300ms ease-in-out;
+
+
+        &:hover {
+          // filter: brightness(1.75);
+          color: rgba(color(white), 1.75);
+        }
       }
 
       .dropdownHandle {
