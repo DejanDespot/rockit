@@ -1,44 +1,42 @@
 import React, { Component } from "react";
 import { hot } from 'react-hot-loader/root';
 import MainView from "./Views/MainView";
+import {debounce} from "lodash";
+import { connect } from 'react-redux';
+import * as actions from './store/actions/screen';
 
 class App extends Component {
-
-    state = {
-        isMobile : window.innerWidth < 768
-    };
-
     componentDidMount() {
-        console.log(this.state.isMobile);
-        window.addEventListener('resize', this.handleResize)
-    }
-
-    handleResize = () => {
-        let width = window.innerWidth;
-        if (width < 768 && !this.state.isMobile) {
-            this.setState({
-                isMobile: true
-            })
-        }
-
-        else if (width > 768 && this.state.isMobile) {
-            this.setState({
-                isMobile: false
-            })
-        }
-    };
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleResize)
+        window.addEventListener(
+            "resize",
+            debounce(() => {
+                this.props.updateWindowSize(window.innerWidth);
+            }, 200)
+        );
     }
 
     render() {
+
         return (
             <div style={{width: '100%', height: '100%'}}>
-                <MainView />
+                {this.props.isMobile ? <div>mobile</div> : <MainView />}
             </div>
         );
     }
 }
 
-export default hot(App);
+const mapStateToProps = state => {
+    return {
+        isMobile: state.screen.width < 768
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        updateWindowSize: size => {
+            dispatch(actions.updateWindowSize(size))
+        }
+    };
+};
+
+export default hot(connect(mapStateToProps, mapDispatchToProps)(App));

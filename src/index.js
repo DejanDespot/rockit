@@ -5,13 +5,18 @@ import styles from './styles/main.scss';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
+import logger from 'redux-logger'
 import thunk from 'redux-thunk';
+import screenReducer from './Store/reducers/screen'
 
 const rootReducer = combineReducers({
+    screen: screenReducer
 });
 
-const store = createStore(rootReducer(
-    applyMiddleware(thunk)
+const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
+
+const store = createStore(rootReducer, composeEnhancers(
+    applyMiddleware(thunk, logger)
 ));
 
 const app = (
