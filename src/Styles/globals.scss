@@ -28,6 +28,15 @@ $colors: (
   box-sizing: border-box;
 }
 
+//--responsive-mixins--//
+$mobile: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
 //--globally available classes--//
 .hide {
   display: none !important;
