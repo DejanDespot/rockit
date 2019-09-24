@@ -11,26 +11,28 @@ class SideBar extends Component {
     render() {
         return(
             <div className={styles.sideBar}>
-                <div className={styles.sideBlock}>
-                    <div className={styles.title}>Main menu</div>
-                    <div className={styles.sideGroup}>
-                        <img src={browseIcon} />
-                        <div>Browse</div>
+                <div>
+                    <div className={styles.sideBlock}>
+                        <div className={styles.title}>Main menu</div>
+                        <div className={styles.sideGroup}>
+                            <img src={browseIcon} />
+                            <div>Browse</div>
+                        </div>
+                        <div className={styles.sideGroup}>
+                            <img src={libraryIcon} />
+                            <div>My Library</div>
+                        </div>
                     </div>
-                    <div className={styles.sideGroup}>
-                        <img src={libraryIcon} />
-                        <div>My Library</div>
-                    </div>
+                    <Playlists />
                 </div>
-                <Playlists />
                 <div className={styles.sideBlock}>
                     <img src={currentSong} className={styles.songArt} />
                     <div className={styles.currentTrack}>
-                    <p>Coby</p>
-                    <p>Traka</p>
+                        <div className={styles.artistName}>Coby</div>
+                        <div>Traka</div>
+                    </div>
                 </div>
             </div>
-        </div>
         );
     }
 }
