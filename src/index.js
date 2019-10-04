@@ -4,7 +4,7 @@ import App from "./App";
 import styles from './styles/main.scss';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 import screenReducer from './Store/reducers/screen'
