@@ -1,0 +1,27 @@
+@import "../globals";
+
+.RecentPlaylists {
+    height: 100%;
+    width: 100%;
+    
+    .Playlist {
+        width: 50%;
+        height: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-transform: capitalize;
+        font-weight: bold;
+
+        img {
+            height: 60%;
+            margin-bottom: 20px;
+        }
+
+        div:last-of-type {
+            margin-top: 10px;
+            color: #6E7177;
+        }
+    }
+}

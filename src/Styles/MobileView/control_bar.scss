@@ -1,0 +1,48 @@
+@import "../globals";
+
+.controlBar {
+    background: #1F1E1E;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid black;
+
+    .extendHandle  {
+        transform: rotate(90deg);
+        height: 50%;
+        transition: filter 300ms ease-in-out;
+
+        &:hover {
+          filter: brightness(1.75);
+        }
+    }
+
+    .trackInfo {
+        color: white;
+        font-size: 1.5em;
+        transition: filter 300ms ease-in-out;
+
+        &:hover {
+          filter: brightness(1.75);
+        }
+    }
+
+    .pauseButton {
+        height: 85%;
+        transition: filter 300ms ease-in-out;
+
+        &:hover {
+          filter: brightness(1.75);
+        }
+    }
+
+    .nextButton {
+        height: 30%;
+        transition: filter 300ms ease-in-out;
+
+        &:hover {
+        filter: brightness(1.75);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import "../globals";
+
+.mainSection {
+    color: white;
+    height: 70%;
+    overflow-y: scroll;
+    padding-top: 10%;
+
+    .RecentlyPlayed {
+        background: color(darkGray);
+        height: 5%;
+        width: 100%;
+        padding-top: 5%;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        position: fixed;
+        top: 9.9%;
+        left: 0;
+
+        div {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

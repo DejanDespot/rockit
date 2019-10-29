@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from '../Styles/main_view.scss'
+import styles from '../Styles/main_view.scss';
 import NavBar from "../Components/NavBar";
 import SideBar from "../Containers/SideBar";
 import ControlBar from '../Containers/ControlBar';

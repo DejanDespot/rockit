@@ -1,0 +1,28 @@
+@import "../globals";
+
+.navBar {
+    background: #1F1E1E;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    border-top: 1px solid black;
+
+    .browseIcon {
+        height: 50%;
+    }
+
+    .libraryIcon {
+        height: 50%;
+    }
+
+    .searchIcon {
+        height: 50%;
+    }
+
+    .homeIcon {
+        height: 50%;
+    }
+}

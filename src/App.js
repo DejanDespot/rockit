@@ -4,6 +4,7 @@ import MainView from "./Views/MainView";
 import {debounce} from "lodash";
 import { connect } from 'react-redux';
 import * as actions from './store/actions/screen';
+import MobileView from './Views/MobileView';
 
 class App extends Component {
     componentDidMount() {
@@ -19,7 +20,7 @@ class App extends Component {
 
         return (
             <div style={{width: '100%', height: '100%'}}>
-                {this.props.isMobile ? <div>mobile</div> : <MainView />}
+                {this.props.isMobile ? <MobileView /> : <MainView />}
             </div>
         );
     }
