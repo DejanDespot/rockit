@@ -8,7 +8,7 @@ class ControlBar extends Component {
     render() {
         return (
             <div className={styles.controlBar}>
-                <img src={backButton} className={styles.extendHandle} />
+                <img src={backButton} className={styles.ToggleButton} onClick={this.props.click}  alt="Toggle" />
                 <div className={styles.trackInfo}>Biseri od zlata • Coby</div>
                 <img src={pauseButton} className={styles.pauseButton} />
                 <img src={nextButton} className={styles.nextButton} />

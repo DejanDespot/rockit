@@ -28,7 +28,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        isMobile: state.screen.width < 768
+        isMobile: state.screen.width < 768,
+        // drawerOpen: state.drawer 
     };
 };
 
