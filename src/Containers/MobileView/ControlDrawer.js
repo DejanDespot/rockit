@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styles from '../../Styles/MobileView/control_drawer.scss';
-import Repeat from '../../Assets/Icons/repeat.svg';
-import Previous from '../../Assets/Icons/previous.svg';
-import Pause from '../../Assets/Icons/rounded-pause-button.svg';
-import Play from '../../Assets/Icons/play-button-inside-a-circle.svg';
-import Next from '../../Assets/Icons/next.svg';
-import Shuffle from '../../Assets/Icons/shuffle.svg';
+import Repeat from '../../Assets/Icons/MobileView/repeat.svg';
+import Previous from '../../Assets/Icons/MobileView/previous.svg';
+import Pause from '../../Assets/Icons/MobileView/rounded-pause-button.svg';
+import Play from '../../Assets/Icons/MobileView/play-button-inside-a-circle.svg';
+import Next from '../../Assets/Icons/MobileView/next.svg';
+import Shuffle from '../../Assets/Icons/MobileView/shuffle.svg';
 import Playlist from '../../Assets/Images/coby.jpg';
-import Toggle from '../../Assets/Icons/back.svg';
+import Toggle from '../../Assets/Icons/MobileView/back.svg';
 
 
 class ControlDrawer extends Component {

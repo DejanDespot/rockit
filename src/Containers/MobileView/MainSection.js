@@ -5,7 +5,7 @@ import RecentPlaylists from './RecentPlaylists';
 class MainSection extends Component {
     render() {
         return (
-            <div className={styles.mainSection}>
+            <div className={styles.MainSection}>
                 <div className={styles.RecentlyPlayed} ><div>Recently played</div></div>
                 <RecentPlaylists />
             </div>

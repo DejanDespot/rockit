@@ -8,11 +8,11 @@ import homeIcon from '../../Assets/Icons/house-black.svg';
 class NavBar extends Component {
     render() {
         return (
-            <div className={styles.navBar}>
-                <img src={homeIcon} className={styles.homeIcon} /> 
-                <img src={browseIcon} className={styles.browseIcon} />
-                <img src={searchIcon} className={styles.searchIcon} />                
-                <img src={libraryIcon} className={styles.libraryIcon} />                                               
+            <div className={styles.NavBar}>
+                <img src={homeIcon} className={styles.HomeIcon} /> 
+                <img src={browseIcon} className={styles.BrowseIcon} />
+                <img src={searchIcon} className={styles.SearchIcon} />                
+                <img src={libraryIcon} className={styles.LibraryIcon} />                                               
             </div>
         );
     }

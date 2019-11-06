@@ -68,5 +68,9 @@
                 color: rgba(color(white), 1.75);
             }
         }
+
+        @include tablet {
+            font-size: 0.9em;
+        }
     }
 }

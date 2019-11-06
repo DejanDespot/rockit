@@ -11,6 +11,10 @@
         padding: 2em;
         display: flex;
 
+        // @include tablet {
+        //     font-size: 0.9em;
+        // }
+
         .mainImage {
             height: 250px;
         }
@@ -168,6 +172,10 @@
                         // filter: brightness(1.75);
                         color: white;
                     }
+
+                    // @include tablet {
+                    //     font-size: 0.9em;
+                    // }
                 }
             }
 
@@ -214,6 +222,10 @@
 
     .mainBlock:last-child {
         flex-direction: column;
+    }
+
+    @include tablet {
+        font-size: 0.9em;
     }
 }
 

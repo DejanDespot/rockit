@@ -1,6 +1,6 @@
 @import "../globals";
 
-.header {
+.Header {
     background: #272727;
     height: 10%;
     color: white;
@@ -8,4 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include mobile {
+        font-size: 1.4em;
+    }
 }

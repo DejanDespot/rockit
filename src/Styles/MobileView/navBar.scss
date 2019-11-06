@@ -1,6 +1,6 @@
 @import "../globals";
 
-.navBar {
+.NavBar {
     background: #1F1E1E;
     height: 10%;
     display: flex;
@@ -10,19 +10,23 @@
     color: white;
     border-top: 1px solid black;
 
-    .browseIcon {
+    .BrowseIcon, .LibraryIcon, .SearchIcon, .HomeIcon {
         height: 50%;
+
+        @include mobile {
+            height: 37%;
+        }
     }
 
-    .libraryIcon {
-        height: 50%;
-    }
+    // .libraryIcon {
+    //     height: 50%;
+    // }
 
-    .searchIcon {
-        height: 50%;
-    }
+    // .searchIcon {
+    //     height: 50%;
+    // }
 
-    .homeIcon {
-        height: 50%;
-    }
+    // .homeIcon {
+    //     height: 50%;
+    // }
 }

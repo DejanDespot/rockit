@@ -8,13 +8,17 @@
     align-items: center;
     border-top: 1px solid black;
 
-    .ToggleButton  {
+    .toggleButton  {
         transform: rotate(90deg);
-        height: 50%;
+        height: 43%;
         transition: filter 300ms ease-in-out;
 
         &:hover {
           filter: brightness(1.75);
+        }
+
+        @include mobile {
+          height: 37%;
         }
     }
 
@@ -26,6 +30,10 @@
         &:hover {
           filter: brightness(1.75);
         }
+
+        @include mobile {
+          font-size: 1.2em;
+        }
     }
 
     .pauseButton {
@@ -34,6 +42,10 @@
 
         &:hover {
           filter: brightness(1.75);
+        }
+
+        @include mobile {
+          height: 80%;
         }
     }
 
