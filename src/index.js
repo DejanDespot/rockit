@@ -8,9 +8,11 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 import screenReducer from './Store/reducers/screen';
+import playerReducer from './Store/reducers/player';
 
 const rootReducer = combineReducers({
-    screen: screenReducer
+    screen: screenReducer,
+    player: playerReducer
 });
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;

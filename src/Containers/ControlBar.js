@@ -2,19 +2,39 @@ import React, { Component } from 'react';
 import styles from '../Styles/control_bar.scss';
 import PreviousButton from '../Assets/Icons/previous.svg';
 import PlayButton from '../Assets/Icons/play-button-inside-a-circle.svg';
+import PauseButton from '../Assets/Icons/rounded-pause-button.svg';
 import NextButton from '../Assets/Icons/next.svg';
 import Timeline from '../Assets/Images/timeline.png';
 import RepeatButton from '../Assets/Icons/repeat.svg';
 import ShuffleButton from '../Assets/Icons/shuffle.svg';
 import VolumeIcon from '../Assets/Icons/volume.svg';
+import AudioPlayerService from "../Utils/audioPlayerService";
+import audio1 from "../Assets/Audio/bensound-allthat.mp3";
+import * as actions from '../store/actions/player';
+import {connect} from "react-redux";
+
+const audioPlayer = new AudioPlayerService();
+let files = [
+    {name: 'asddsa', file: audio1},
+    {name: 'asddsa', file: audio1},
+    {name: 'asddsa', file: audio1},
+    {name: 'asddsa', file: audio1},
+    {name: 'asddsa', file: audio1}
+];
 
 class ControlBar extends Component {
+    onPlayRequested = () => {
+        audioPlayer.playSound(audio1);
+        this.props.togglePlay();
+    };
+
     render() {
+        console.log(this.props);
         return (
             <div className={styles.controlbar}>
                 <div className={styles.controlBlock}>
                     <img src={PreviousButton} className={styles.prev} />
-                    <img src={PlayButton} className={styles.play}/>
+                    <img src={this.props.playing ? PauseButton: PlayButton} className={styles.play} onClick={this.onPlayRequested}/>
                     <img src={NextButton} className={styles.next}/>
                 </div>
                 <div className={styles.time}>
@@ -31,4 +51,19 @@ class ControlBar extends Component {
     }
 }
 
-export default ControlBar;
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        playing: state.player.playing
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        togglePlay: () => {
+            dispatch(actions.togglePlay())
+        }
+    };
+};
+
+export default (connect(mapStateToProps, mapDispatchToProps)(ControlBar));

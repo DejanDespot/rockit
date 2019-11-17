@@ -11,7 +11,7 @@ class NavBar extends Component {
         return (
             <div className={styles.NavBar}>
                 <div className={styles.NavBlock}>
-                    <img src={backButton} alt="Back" role="button" className={styles.BackButton}/>
+                    <img src={BackButton} alt="Back" role="button" className={styles.BackButton}/>
                     <SearchBar/>
                 </div>
                 <div className={styles.NavBlock}>
