@@ -5,7 +5,21 @@ import Options from '../Assets/Icons/options.svg';
 import FilterImg from '../Assets/Icons/magnifying-glass.svg';
 import Songs from '../Containers/Songs';
 
+import AudioPlayerService from "../Utils/audioPlayerService";
+import * as actions from '../store/actions/player';
+import {connect} from "react-redux";
+import songs from '../Utils/songs';
+
+
+
+const audioPlayer = new AudioPlayerService();
+
+
 class MainSection extends Component {
+    onPlayRequested = (index) => {
+        audioPlayer.playSound(songs[index].file);
+        this.props.togglePlay();
+    };
     render() {
         return (
             <div className={styles.mainSection}>
@@ -39,7 +53,7 @@ class MainSection extends Component {
                             <div>Artist</div>
                             <div>Duration</div>
                         </div>
-                        <Songs />
+                        <Songs onPlayHandle={(index) => this.onPlayRequested(index)} />
                     </div>
                 </div>
             </div>
@@ -47,4 +61,20 @@ class MainSection extends Component {
     }
 }
 
-export default MainSection;
+
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        playing: state.player.playing
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        togglePlay: () => {
+            dispatch(actions.togglePlay())
+        }
+    };
+};
+
+export default (connect(mapStateToProps, mapDispatchToProps)(MainSection));

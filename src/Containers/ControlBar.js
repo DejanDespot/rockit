@@ -9,22 +9,15 @@ import RepeatButton from '../Assets/Icons/repeat.svg';
 import ShuffleButton from '../Assets/Icons/shuffle.svg';
 import VolumeIcon from '../Assets/Icons/volume.svg';
 import AudioPlayerService from "../Utils/audioPlayerService";
-import audio1 from "../Assets/Audio/bensound-allthat.mp3";
+// import audio1 from "../Assets/Audio/bensound-allthat.mp3";
 import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
 
 const audioPlayer = new AudioPlayerService();
-let files = [
-    {name: 'asddsa', file: audio1},
-    {name: 'asddsa', file: audio1},
-    {name: 'asddsa', file: audio1},
-    {name: 'asddsa', file: audio1},
-    {name: 'asddsa', file: audio1}
-];
 
 class ControlBar extends Component {
     onPlayRequested = () => {
-        audioPlayer.playSound(audio1);
+        audioPlayer.playSound();
         this.props.togglePlay();
     };
 

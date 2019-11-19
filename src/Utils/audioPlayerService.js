@@ -16,7 +16,7 @@ export default class AudioPlayerService {
         if (this.soundPlayer && this.soundPlayer.playing()) {
             this.soundPlayer.pause();
             //this.soundPlayer.unload();
-            //this.soundPlayer = null;
+            // this.soundPlayer = null;
             return
         }
 
