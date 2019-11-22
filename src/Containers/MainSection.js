@@ -8,7 +8,7 @@ import Songs from '../Containers/Songs';
 import AudioPlayerService from "../Utils/audioPlayerService";
 import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
-import songs from '../Utils/songs';
+// import songs from '../Utils/songs';
 
 
 
@@ -17,9 +17,12 @@ const audioPlayer = new AudioPlayerService();
 
 class MainSection extends Component {
     onPlayRequested = (index) => {
-        audioPlayer.playSound(songs[index].file);
+        // audioPlayer.playSound(songs[index].file);
+        audioPlayer.playSound(index);
         this.props.togglePlay();
+        this.props.nextSong(index);
     };
+
     render() {
         return (
             <div className={styles.mainSection}>
@@ -73,6 +76,9 @@ const mapDispatchToProps = dispatch => {
     return {
         togglePlay: () => {
             dispatch(actions.togglePlay())
+        },
+        nextSong: (index) => {
+            dispatch(actions.nextSong(index))
         }
     };
 };

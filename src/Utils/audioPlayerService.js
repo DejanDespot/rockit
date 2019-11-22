@@ -1,4 +1,5 @@
 import {Howl, Howler} from 'howler';
+import songs from '../Utils/songs';
 
 // Set up audio context
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -10,26 +11,45 @@ export default class AudioPlayerService {
         this.currentBuffer = null;
     }
 
-    playSound = (audioFile) => {
-        console.log(audioFile)
-        // pause instance
-        if (this.soundPlayer && this.soundPlayer.playing()) {
+    playSound = (index) => {
+        console.log(songs)
+        // Pause instance
+        if ((this.soundPlayer && this.soundPlayer.playing()) && (index === songs[index])) {
             this.soundPlayer.pause();
-            //this.soundPlayer.unload();
+            // this.soundPlayer.unload();
             // this.soundPlayer = null;
             return
-        }
+        } else if ((this.soundPlayer && this.soundPlayer.playing()) && (index !== songs[index])) {
+            this.soundPlayer.unload();
+            this.soundPlayer = new Howl({
+                src: [songs[index].file]
+            });
+        } 
 
         if (!this.soundPlayer) {
             // setup the new Howl
             this.soundPlayer = new Howl({
-                src: [audioFile]
+                src: [songs[index].file]
             });
             //this.visualizeAudio(audioFile);
         }
 
         // Play the sound.
         this.soundPlayer.play();
+    };
+
+    playNextSound = (index) => {
+        // console.log(index);
+        if (this.soundPlayer && this.soundPlayer.playing()) {
+            this.soundPlayer.unload();
+            this.soundPlayer = new Howl({
+                src: [songs[index + 1].file]
+            });
+        }
+
+        // this.soundPlayer.play();
+        console.log(this.soundPlayer);
+        
     };
 
     visualizeAudio = audioFile => {

@@ -21,14 +21,18 @@ class ControlBar extends Component {
         this.props.togglePlay();
     };
 
+    onNextRequested = (index) => {
+        audioPlayer.playNextSound(index);
+    };
+
     render() {
-        console.log(this.props);
+        // console.log();
         return (
             <div className={styles.controlbar}>
                 <div className={styles.controlBlock}>
                     <img src={PreviousButton} className={styles.prev} />
                     <img src={this.props.playing ? PauseButton: PlayButton} className={styles.play} onClick={this.onPlayRequested}/>
-                    <img src={NextButton} className={styles.next}/>
+                    <img src={NextButton} className={styles.next} onClick={() => this.onNextRequested(this.props.currentSong)} />
                 </div>
                 <div className={styles.time}>
                     <img src={Timeline} className={styles.timeline} />
@@ -47,7 +51,8 @@ class ControlBar extends Component {
 const mapStateToProps = state => {
     console.log(state);
     return {
-        playing: state.player.playing
+        playing: state.player.playing,
+        currentSong: state.player.currentSong
     };
 };
 
