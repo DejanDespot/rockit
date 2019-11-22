@@ -4,7 +4,7 @@ import songs from '../Utils/songs';
 // Set up audio context
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-export default class AudioPlayerService {
+class AudioPlayerService {
     constructor() {
         this.soundPlayer = null;
         this.audioContext = new AudioContext();
@@ -47,7 +47,7 @@ export default class AudioPlayerService {
             });
         }
 
-        // this.soundPlayer.play();
+        this.soundPlayer.play();
         console.log(this.soundPlayer);
         
     };
@@ -60,3 +60,5 @@ export default class AudioPlayerService {
         //     .then(audioBuffer => console.log(audioBuffer));
     };
 }
+
+export default new AudioPlayerService()

@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 
 
 
-const audioPlayer = new AudioPlayerService();
+const audioPlayer = AudioPlayerService;
 
 
 class MainSection extends Component {

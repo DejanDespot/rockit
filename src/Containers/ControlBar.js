@@ -13,7 +13,7 @@ import AudioPlayerService from "../Utils/audioPlayerService";
 import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
 
-const audioPlayer = new AudioPlayerService();
+const audioPlayer = AudioPlayerService;
 
 class ControlBar extends Component {
     onPlayRequested = () => {
