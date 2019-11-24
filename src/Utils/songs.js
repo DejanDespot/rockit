@@ -10,6 +10,6 @@ const Songs = [
     {name: 'Evolution', artist: 'Bensound', file: Audio3, duration: '2:45', id: "third"},
     {name: 'High Octane', artist: 'Bensound', file: Audio4, duration: '2:35', id: "fourth"},
     {name: 'Hip Jazz', artist: 'Bensound', file: Audio5, duration: '2:43', id: "fifth"}
-]
+];
 
 export default Songs;

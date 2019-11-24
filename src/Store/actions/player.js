@@ -1,9 +1,5 @@
-const togglePlay = () => dispatch => {
-    dispatch({ type: "TOGGLE PLAY"});
+const togglePlay = (index, playing) => dispatch => {
+    dispatch({ type: "TOGGLE PLAY", index, playing});
 };
 
-const nextSong = (index) => dispatch => {
-    dispatch({ type: "NEXT SONG", index: index})
-}
-
-export { togglePlay, nextSong };
+export { togglePlay };

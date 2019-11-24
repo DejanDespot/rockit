@@ -6,9 +6,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "TOGGLE PLAY":
-            return {...state, playing: !state.playing};
-        case "NEXT SONG":
-            return {...state, currentSong: action.index}
+            return {...state, playing: action.playing? action.playing : !state.playing, currentSong: action.index};
         default:
             return state;
     }

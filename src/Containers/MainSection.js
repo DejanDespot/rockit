@@ -10,17 +10,13 @@ import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
 // import songs from '../Utils/songs';
 
-
-
 const audioPlayer = AudioPlayerService;
 
 
 class MainSection extends Component {
     onPlayRequested = (index) => {
-        // audioPlayer.playSound(songs[index].file);
         audioPlayer.playSound(index);
-        this.props.togglePlay();
-        this.props.nextSong(index);
+        this.props.togglePlay(index, true);
     };
 
     render() {
@@ -66,7 +62,6 @@ class MainSection extends Component {
 
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         playing: state.player.playing
     };
@@ -74,12 +69,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        togglePlay: () => {
-            dispatch(actions.togglePlay())
+        togglePlay: (index, playing) => {
+            dispatch(actions.togglePlay(index, playing))
         },
-        nextSong: (index) => {
-            dispatch(actions.nextSong(index))
-        }
     };
 };
 

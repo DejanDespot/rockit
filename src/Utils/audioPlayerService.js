@@ -7,27 +7,38 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 class AudioPlayerService {
     constructor() {
         this.soundPlayer = null;
+        this.currentSong = null;
         this.audioContext = new AudioContext();
         this.currentBuffer = null;
     }
 
     playSound = (index) => {
-        console.log(songs)
-        // Pause instance
-        if ((this.soundPlayer && this.soundPlayer.playing()) && (index === songs[index])) {
-            this.soundPlayer.pause();
-            // this.soundPlayer.unload();
-            // this.soundPlayer = null;
+        // pause player instance
+        if (this.soundPlayer && this.currentSong === index) {
+            // check if player is plauing
+            if (this.soundPlayer.playing()) {
+                this.soundPlayer.pause();
+            }
+
+            else {
+                this.soundPlayer.play();
+            }
             return
-        } else if ((this.soundPlayer && this.soundPlayer.playing()) && (index !== songs[index])) {
+        }
+
+        // play new song when player is already active
+        if (this.soundPlayer) {
             this.soundPlayer.unload();
+            this.currentSong = index;
             this.soundPlayer = new Howl({
                 src: [songs[index].file]
             });
-        } 
+        }
 
+        // play new song when no instance is loaded
         if (!this.soundPlayer) {
             // setup the new Howl
+            this.currentSong = index;
             this.soundPlayer = new Howl({
                 src: [songs[index].file]
             });
@@ -36,29 +47,6 @@ class AudioPlayerService {
 
         // Play the sound.
         this.soundPlayer.play();
-    };
-
-    playNextSound = (index) => {
-        // console.log(songs.length);
-        if ((this.soundPlayer && this.soundPlayer.playing()) && ((index + 1) > songs.length)) {
-            this.soundPlayer.unload();
-            this.soundPlayer = new Howl({
-                src: [songs[0].file]
-            });
-        }
-
-        if (this.soundPlayer && this.soundPlayer.playing()) {
-            this.soundPlayer.unload();
-            this.soundPlayer = new Howl({
-                src: [songs[index + 1].file]
-            });
-        }
-        
-        
-
-        this.soundPlayer.play();
-        // console.log(this.soundPlayer);
-        
     };
 
     visualizeAudio = audioFile => {

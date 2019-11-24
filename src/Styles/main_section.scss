@@ -173,6 +173,10 @@
                         color: white;
                     }
 
+                    &.active {
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+
                     // @include tablet {
                     //     font-size: 0.9em;
                     // }
