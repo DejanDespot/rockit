@@ -39,16 +39,25 @@ class AudioPlayerService {
     };
 
     playNextSound = (index) => {
-        // console.log(index);
+        // console.log(songs.length);
+        if ((this.soundPlayer && this.soundPlayer.playing()) && ((index + 1) > songs.length)) {
+            this.soundPlayer.unload();
+            this.soundPlayer = new Howl({
+                src: [songs[0].file]
+            });
+        }
+
         if (this.soundPlayer && this.soundPlayer.playing()) {
             this.soundPlayer.unload();
             this.soundPlayer = new Howl({
                 src: [songs[index + 1].file]
             });
         }
+        
+        
 
         this.soundPlayer.play();
-        console.log(this.soundPlayer);
+        // console.log(this.soundPlayer);
         
     };
 

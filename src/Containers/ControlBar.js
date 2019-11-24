@@ -12,6 +12,7 @@ import AudioPlayerService from "../Utils/audioPlayerService";
 // import audio1 from "../Assets/Audio/bensound-allthat.mp3";
 import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
+import songs from '../Utils/songs';
 
 const audioPlayer = AudioPlayerService;
 
@@ -23,6 +24,7 @@ class ControlBar extends Component {
 
     onNextRequested = (index) => {
         audioPlayer.playNextSound(index);
+        this.props.nextSong(index + 1);
     };
 
     render() {
@@ -60,7 +62,11 @@ const mapDispatchToProps = dispatch => {
     return {
         togglePlay: () => {
             dispatch(actions.togglePlay())
+        },
+        nextSong: (index) => {
+            dispatch(actions.nextSong(index))
         }
+        
     };
 };
 
