@@ -48,6 +48,10 @@
             &:hover {
                 filter: brightness(1.75);
             }
+
+            &.active {
+                filter: brightness(1.75)
+            }
         }
 
         .volumeBar {

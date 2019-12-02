@@ -50,11 +50,13 @@
             align-items: center;
             margin-top: 12px;
             cursor: pointer;
-            transition: filter 300ms ease-in-out;
+            transform: translateX(0);
+            transition: filter transform 300ms ease-in-out;
 
             &:hover {
                 filter: brightness(1.75);
                 color: rgba(color(white), 1.75);
+                transform: translateX(1%);
             }
         }
 

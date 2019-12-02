@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../Styles/main_section.scss';
 import PlaylistImage from '../Assets/Images/coby.jpg';
-import Options from '../Assets/Icons/options.svg';
+import OptionsImg from '../Assets/Icons/options.svg';
 import FilterImg from '../Assets/Icons/magnifying-glass.svg';
 import Songs from '../Containers/Songs';
 
@@ -9,6 +9,8 @@ import AudioPlayerService from "../Utils/audioPlayerService";
 import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
 // import songs from '../Utils/songs';
+import Options from '../Components/Options';
+import Dropdown from '../Components/Dropdown';
 
 const audioPlayer = AudioPlayerService;
 
@@ -35,15 +37,22 @@ class MainSection extends Component {
                         </div>
                         <div className={styles.buttons}>
                             <div className={styles.play}>Play</div>
-                            <img src={Options} />
+                            <img className={this.props.optionsOpn && styles.Clicked} src={OptionsImg} onClick={this.props.toggleOptions} />
+                            <Options open={this.props.optionsOpn} />
                         </div>
                     </div>
+                    <Dropdown open={this.props.dropdown} />
                 </div>
                 {/* <div className={classNames(styles.mainBlock, styles.lastBlock)}> */}
                 <div className={styles.mainBlock}>
                     <div className={styles.filter}>
                         <img src={FilterImg} /> 
-                        <p>Filter</p>
+                        <div className={styles.Form} >
+                             <input type="text" name="search" required autoComplete="off" />
+                             <label for="search" className={styles.LabelSearch}>
+                                 <span className={styles.ContentSearch}>Search</span>
+                             </label>
+                        </div>
                     </div>
                     <div className={styles.list}>
                         <div className={styles.infoLabels}>
@@ -63,7 +72,9 @@ class MainSection extends Component {
 
 const mapStateToProps = state => {
     return {
-        playing: state.player.playing
+        playing: state.player.playing,
+        optionsOpn: state.player.optionsOpn,
+        dropdown: state.player.dropdown
     };
 };
 
@@ -72,7 +83,13 @@ const mapDispatchToProps = dispatch => {
         togglePlay: (index, playing) => {
             dispatch(actions.togglePlay(index, playing))
         },
+        toggleOptions: () => {
+            dispatch(actions.toggleOptions());
+        }
     };
 };
 
 export default (connect(mapStateToProps, mapDispatchToProps)(MainSection));
+
+
+

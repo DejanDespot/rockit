@@ -5,6 +5,9 @@ import Logo from '../Assets/Icons/play-button.svg';
 import Person from '../Assets/Images/person.png';
 import SearchBar from "../Containers/SearchBar";
 import classNames from 'classnames';
+import {connect} from "react-redux";
+import * as actions from '../store/actions/player';
+import Dropdown from '../Components/Dropdown';
 
 class NavBar extends Component {
     render() {
@@ -23,7 +26,8 @@ class NavBar extends Component {
                         <img src={Person} alt="User image"/>
                         <div className={styles.DropdownGroup}>
                             <div className={styles.UserName}>Nicolas Gruber</div>
-                            <img src={BackButton} alt="Back" role="button" className={styles.DropdownHandle}/>
+                            <img src={BackButton} alt="Back" role="button" className={styles.DropdownHandle} onClick={this.props.toggleDropdown} />
+                            {/* <Dropdown open={this.props.dropdown} /> */}
                         </div>
                     </div>
                 </div>
@@ -32,4 +36,18 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+const mapStateToProps = state => {
+    return {
+       dropdown: state.player.dropdown
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        toggleDropdown: () => {
+            dispatch(actions.toggleDropdown())
+        }
+    };
+};
+
+export default (connect(mapStateToProps, mapDispatchToProps)(NavBar));

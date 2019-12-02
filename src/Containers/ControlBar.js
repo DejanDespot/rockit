@@ -42,7 +42,7 @@ class ControlBar extends Component {
             // when no index is passed
             else {
                 audioPlayer.playSound(songIndex);
-                // toggle when index is indentical, e.g. in case of pausing the son
+                // toggle when index is indentical, e.g. in case of pausing the song
                 if (this.props.currentSong === index){
                     this.props.togglePlay(songIndex);
                 }
@@ -56,6 +56,8 @@ class ControlBar extends Component {
 
     render() {
         const {currentSong} = this.props;
+        const {activeRepeat} = this.props; 
+        const {activeShuffle} = this.props; 
 
         return (
             <div className={styles.controlbar}>
@@ -68,8 +70,8 @@ class ControlBar extends Component {
                     <img src={Timeline} className={styles.timeline} />
                 </div>
                 <div className={styles.controlBlock}>
-                    <img src={RepeatButton} />
-                    <img src={ShuffleButton} />
+                    <img className={activeRepeat && styles.active} src={RepeatButton} onClick={this.props.toggleRepeat} />
+                    <img className={activeShuffle ? styles.active : null} src={ShuffleButton} onClick={this.props.toggleShuffle} />
                     <img src={VolumeIcon} />
                     <div className={styles.volumeBar}></div>
                 </div>
@@ -81,7 +83,9 @@ class ControlBar extends Component {
 const mapStateToProps = state => {
     return {
         playing: state.player.playing,
-        currentSong: state.player.currentSong
+        currentSong: state.player.currentSong,
+        activeRepeat: state.player.activeRepeat,
+        activeShuffle: state.player.activeShuffle
     };
 };
 
@@ -89,6 +93,12 @@ const mapDispatchToProps = dispatch => {
     return {
         togglePlay: (index, playing) => {
             dispatch(actions.togglePlay(index, playing))
+        },
+        toggleRepeat: () => {
+            dispatch(actions.toggleRepeat())
+        },
+        toggleShuffle: () => {
+            dispatch(actions.toggleShuffle())
         }
         
     };

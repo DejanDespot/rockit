@@ -1,0 +1,50 @@
+@import "./globals";
+
+.Options {
+    background: #333333;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 7em;
+    right: 1.3em;
+    padding: 8px;
+    color: #6E7177;
+    border-radius: 5px;
+    // z-index: 10;
+    transition: color, opacity, transform 700ms ease-in-out;
+
+    div {
+        text-transform: capitalize;
+        border-bottom: 1px solid #FFFFFF;
+        cursor: pointer;
+
+        &:nth-of-type(1) {
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        &:nth-of-type(2) {
+            margin-bottom: 8px;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+
+}
+
+.Open {
+    // transform: translateY(0);
+    // opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+.Closed {
+    // transform: translateY(800px);
+    // opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+}
+
