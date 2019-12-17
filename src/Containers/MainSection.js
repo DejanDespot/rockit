@@ -11,6 +11,7 @@ import {connect} from "react-redux";
 // import songs from '../Utils/songs';
 import Options from '../Components/Options';
 import Dropdown from '../Components/Dropdown';
+import WrapperAuto from '../Utils/WrapperAuto';
 
 const audioPlayer = AudioPlayerService;
 
@@ -22,8 +23,9 @@ class MainSection extends Component {
     };
 
     render() {
+        // onClick={this.props.closeAll}
         return (
-            <div className={styles.mainSection}>
+            <div className={styles.mainSection}  >
                 <div className={styles.mainBlock}>
                     <img src={PlaylistImage} className={styles.mainImage}/>
                     <div className={styles.infoAndButtons}>
@@ -38,10 +40,14 @@ class MainSection extends Component {
                         <div className={styles.buttons}>
                             <div className={styles.play}>Play</div>
                             <img className={this.props.optionsOpn && styles.Clicked} src={OptionsImg} onClick={this.props.toggleOptions} />
-                            <Options open={this.props.optionsOpn} />
+                            <WrapperAuto change={this.props.change} className={styles.WrapperAuto} >
+                                <Options open={this.props.optionsOpn} />
+                            </WrapperAuto>
                         </div>
                     </div>
-                    <Dropdown open={this.props.dropdown} />
+                    {/* <WrapperAuto change={this.props.change} > */}
+                        <Dropdown open={this.props.dropdown} />
+                    {/* </WrapperAuto> */}
                 </div>
                 {/* <div className={classNames(styles.mainBlock, styles.lastBlock)}> */}
                 <div className={styles.mainBlock}>
@@ -85,6 +91,9 @@ const mapDispatchToProps = dispatch => {
         },
         toggleOptions: () => {
             dispatch(actions.toggleOptions());
+        },
+        change: () => {
+            dispatch(actions.change());
         }
     };
 };

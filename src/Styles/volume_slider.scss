@@ -1,0 +1,20 @@
+@import './globals.scss';
+
+.Slider {
+//     height: 5px;
+//     width: 150px;
+//     // background: #6E7177;
+//     // border-radius: 2px;
+    cursor: pointer;
+
+//     @include tablet {
+//         width: 95px;
+//     }
+}
+
+PrettoSlider {
+    width: 200px;
+}
+
+
+// active: { background-color: #9B51E0; }

@@ -2,15 +2,15 @@
 
 .Options {
     background: #333333;
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     position: relative;
-    top: 7em;
-    right: 1.3em;
+    top: -0.5px;
+    right: 0.5px;
     padding: 8px;
     color: #6E7177;
     border-radius: 5px;
-    // z-index: 10;
+    z-index: 1;
     transition: color, opacity, transform 700ms ease-in-out;
 
     div {

@@ -1,10 +1,11 @@
 const initialState = {
     playing: false,
     currentSong: null,
-    activeBtn: false,
+    optionsOpn: false,
     activeRepeat: false,
     activeShuffle: false,
-    dropdown: false
+    dropdown: false,
+    volumeX: 0.5
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,6 +20,10 @@ const reducer = (state = initialState, action) => {
             return {...state, optionsOpn: !state.optionsOpn};
         case "TOGGLE DROPDOWN":
             return {...state, dropdown: !state.dropdown};
+        case "CHANGE":
+            return {...state, dropdown: false, optionsOpn: false};
+        case "CHANGE VOLUME":
+            return {...state, volumeX: action.volume };
         default:
             return state;
     }

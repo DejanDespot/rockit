@@ -12,6 +12,7 @@ import AudioPlayerService from "../Utils/audioPlayerService";
 import * as actions from '../store/actions/player';
 import {connect} from "react-redux";
 import songs from '../Utils/songs';
+import VolumeSlider from '../Containers/VolumeSlider';
 
 const audioPlayer = AudioPlayerService;
 
@@ -73,7 +74,8 @@ class ControlBar extends Component {
                     <img className={activeRepeat && styles.active} src={RepeatButton} onClick={this.props.toggleRepeat} />
                     <img className={activeShuffle ? styles.active : null} src={ShuffleButton} onClick={this.props.toggleShuffle} />
                     <img src={VolumeIcon} />
-                    <div className={styles.volumeBar}></div>
+                    {/* <div className={styles.volumeBar}></div> */}
+                    <VolumeSlider />
                 </div>
             </div>
         );

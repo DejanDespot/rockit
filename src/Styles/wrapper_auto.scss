@@ -1,0 +1,16 @@
+@import "./globals";
+
+.WrapperAuto {
+    background: #181818;
+    // background: yellow;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 6em;
+    right: 1.2em;
+    border-radius: 5px;
+
+    @include tablet {
+        top: 6.6em;
+    }
+}
