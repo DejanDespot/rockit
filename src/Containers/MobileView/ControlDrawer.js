@@ -8,6 +8,8 @@ import Next from '../../Assets/Icons/MobileView/next.svg';
 import Shuffle from '../../Assets/Icons/MobileView/shuffle.svg';
 import Playlist from '../../Assets/Images/coby.jpg';
 import Toggle from '../../Assets/Icons/MobileView/back.svg';
+import VolumeSlider from '../VolumeSlider';
+import VolumeIcon from '../../Assets/Icons/volume.svg';
 
 
 class ControlDrawer extends Component {
@@ -27,6 +29,10 @@ class ControlDrawer extends Component {
                         <img src={Playlist} />
                         <div>4 strane sveta</div>
                         <div>Coby feat. senidah</div>
+                    </div>
+                    <div className={styles.Volume}>
+                        <img src={VolumeIcon} />
+                        <VolumeSlider />
                     </div>
                     <div className={styles.TrackButtons}>
                         <img src={Repeat} />
