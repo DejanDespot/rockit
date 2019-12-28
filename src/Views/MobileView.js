@@ -6,6 +6,9 @@ import ControlBar from '../Containers/MobileView/ControlBar';
 import NavBar from '../Containers/MobileView/NavBar';
 import ControlDrawer from '../Containers/MobileView/ControlDrawer';
 
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import Search from '../Containers/MobileView/Search';
+
 
 class MobileView extends Component {
     state = {
@@ -29,11 +32,13 @@ class MobileView extends Component {
     render() {
         return (
             <div className={styles.mobileView}>
-                <Header />
-                <MainSection />
-                <ControlBar open={this.state.isOpen} click={this.controlDrawerOpenHandler} />
-                <NavBar />
-                <ControlDrawer open={this.state.isOpen} click={this.controlDraweCloseHandler} /> 
+                <Router>
+                    <Header />
+                    <MainSection />
+                    <ControlBar open={this.state.isOpen} click={this.controlDrawerOpenHandler} />
+                    <NavBar />
+                    <ControlDrawer open={this.state.isOpen} click={this.controlDraweCloseHandler} />
+                </Router>
             </div>
         );
     }

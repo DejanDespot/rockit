@@ -49,6 +49,19 @@
         }
     }
 
+    .play {
+      height: 85%;
+        transition: filter 300ms ease-in-out;
+
+        &:hover {
+          filter: brightness(1.75);
+        }
+
+        @include mobile {
+          height: 80%;
+        }
+    }
+
     .nextButton {
         height: 30%;
         transition: filter 300ms ease-in-out;

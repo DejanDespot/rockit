@@ -3,24 +3,67 @@ import styles from '../../Styles/MobileView/main_section.scss';
 // import RecentPlaylists from './RecentPlaylists';
 import Songs from '../MobileView/Songs';
 
+import AudioPlayerService from "../../Utils/audioPlayerService";
+import * as actions from '../../store/actions/player';
+import {connect} from "react-redux";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Search from '../../Containers/MobileView/Search';
+
+
+const audioPlayer = AudioPlayerService;
+
 class MainSection extends Component {
+    onPlayRequested = (index) => {
+        audioPlayer.playSound(index);
+        this.props.togglePlay(index, true);
+    };
+
     render() {
         return (
-            <div className={styles.MainSection}>
-                <div className={styles.MyLibrary} ><div>my library</div></div>
-                {/* <RecentPlaylists /> */}
-                <div className={styles.list}>
+            <Router>
+                <div className={styles.MainSection}>
+                    <div className={styles.MyLibrary} ><div>my library</div></div>
+                    {/* <RecentPlaylists /> */}
+                    <div className={styles.list}>
                         <div className={styles.infoLabels}>
                             <div>#</div>
                             <div>Title</div>
                             <div>Artist</div>
                             <div>Duration</div>
                         </div>
-                        <Songs onPlayHandle={(index) => this.onPlayRequested(index)} />
+                        {/* <Songs onPlayHandle={(index) => this.onPlayRequested(index)} /> */}
+                        <Switch>
+                            <Route path="/" exact component={Songs} />
+                            <Route path="/search" component={Search} />
+                        </Switch>
                     </div>
-            </div>
+                </div>
+            </Router>
         );
     }
 }
 
-export default MainSection;
+const mapStateToProps = state => {
+    return {
+        playing: state.player.playing,
+        optionsOpn: state.player.optionsOpn,
+        dropdown: state.player.dropdown
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        togglePlay: (index, playing) => {
+            dispatch(actions.togglePlay(index, playing))
+        },
+        toggleOptions: () => {
+            dispatch(actions.toggleOptions());
+        },
+        change: () => {
+            dispatch(actions.change());
+        }
+    };
+};
+
+export default (connect(mapStateToProps, mapDispatchToProps)(MainSection));
