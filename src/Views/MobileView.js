@@ -32,13 +32,11 @@ class MobileView extends Component {
     render() {
         return (
             <div className={styles.mobileView}>
-                <Router>
-                    <Header />
-                    <MainSection />
-                    <ControlBar open={this.state.isOpen} click={this.controlDrawerOpenHandler} />
-                    <NavBar />
-                    <ControlDrawer open={this.state.isOpen} click={this.controlDraweCloseHandler} />
-                </Router>
+                <Header />
+                <MainSection />
+                <ControlBar open={this.state.isOpen} click={this.controlDrawerOpenHandler} />
+                <NavBar />
+                <ControlDrawer open={this.state.isOpen} click={this.controlDraweCloseHandler} />
             </div>
         );
     }

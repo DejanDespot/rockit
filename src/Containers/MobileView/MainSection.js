@@ -23,20 +23,11 @@ class MainSection extends Component {
         return (
             <Router>
                 <div className={styles.MainSection}>
-                    <div className={styles.MyLibrary} ><div>my library</div></div>
-                    {/* <RecentPlaylists /> */}
                     <div className={styles.list}>
-                        <div className={styles.infoLabels}>
-                            <div>#</div>
-                            <div>Title</div>
-                            <div>Artist</div>
-                            <div>Duration</div>
-                        </div>
-                        {/* <Songs onPlayHandle={(index) => this.onPlayRequested(index)} /> */}
-                        <Switch>
-                            <Route path="/" exact component={Songs} />
-                            <Route path="/search" component={Search} />
-                        </Switch>
+                    <Switch>
+                        <Route path="/" exact component={Songs} />
+                        <Route path="/search" component={Search} />
+                    </Switch>
                     </div>
                 </div>
             </Router>

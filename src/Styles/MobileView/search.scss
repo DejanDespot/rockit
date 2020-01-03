@@ -7,10 +7,12 @@
     align-items: bottom;
     color: #6E7177;
     margin-bottom: 2%;
+    font-size: 1.2em;
+    padding-left: 2%;
 
     img {
-        height: 20px;
-        margin-right: 15px;
+        height: 35px;
+        margin-right: 20px;
         transition: filter 300ms ease-in-out;
         cursor: pointer;
         align-self: flex-end;
@@ -21,10 +23,12 @@
     }
 
     .Form {
-        width: 50%;
-        height: 50px;
+        width: 70%;
+        height: 100px;
         position: relative;
         overflow-x: hidden;
+        overflow-y: hidden;
+        margin-top: -70px;
 
         input {
             // border-radius: 10px;
@@ -32,15 +36,16 @@
             border: none;
             border-bottom: 1px solid #6E7177;
             color: white;
-            padding-top: 32px;
+            padding-top: 68px;
             align-self: flex-end;
-            width: 50%;
+            width: 70%;
             outline: none;
+            font-size: 1em;
 
             &:focus + .LabelSearch .ContentSearch,
             &:valid + .LabelSearch .ContentSearch {
                 transform: translateY(-30px);
-                font-size: 0.9em;
+                font-size: 0.8em;
                 color: #9B51E0;
             }
 
@@ -63,7 +68,7 @@
                 content: "";
                 position: absolute;
                 height: 100%;
-                width: 50%;
+                width: 70%;
                 border-bottom: 2px solid #9B51E0;
                 left: 0px;
                 bottom: 0px;
