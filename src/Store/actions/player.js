@@ -18,8 +18,8 @@ const toggleDropdown = () => dispatch => {
     dispatch({ type: "TOGGLE DROPDOWN" });
 };
 
-const changeVolume = () => dispatch => {
-    dispatch({ type: "CHANGE" });
+const changeVolume = (volume) => dispatch => {
+    dispatch({ type: "CHANGE VOLUME", volume });
 };
 
 

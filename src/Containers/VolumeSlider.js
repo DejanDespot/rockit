@@ -46,14 +46,14 @@ const PrettoSlider = withStyles({
     },
 })(Slider);
 
-export default function VolumeSlider() {
+export default function VolumeSlider(props) {
     // render() {
 
         const classes = useStyles();
         return(
             <div className={classes.root}>   
                 {/* <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />   */}
-                <PrettoSlider min={0} max={100} defaultValue={50} step={1} valueLabelDisplay="auto" aria-label="pretto slider" onChange={(event) => props.volumeHandler(event.target.value)} />
+                <PrettoSlider min={0} max={100} defaultValue={50} step={1} valueLabelDisplay="auto" aria-label="pretto slider" value={Math.round(props.value * 100)} onChange={(event, value) => props.volumeHandler(value)} />
             </div>
         );
     // }
