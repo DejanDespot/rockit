@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
         case "CHANGE":
             return {...state, dropdown: false, optionsOpn: false};
         case "CHANGE VOLUME":
-            return {...state, volumeX: action.volume };
+            return {...state, volumeX: action.volume};
         default:
             return state;
     }

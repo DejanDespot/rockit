@@ -55,6 +55,10 @@ class ControlBar extends Component {
         }
     };
 
+    volumeSlider = (volume) => {
+        this.props.changeVolume(volume);
+    };
+
     render() {
         const {currentSong} = this.props;
         const {activeRepeat} = this.props; 
@@ -75,7 +79,7 @@ class ControlBar extends Component {
                     <img className={activeShuffle ? styles.active : null} src={ShuffleButton} onClick={this.props.toggleShuffle} />
                     <img src={VolumeIcon} />
                     {/* <div className={styles.volumeBar}></div> */}
-                    <VolumeSlider />
+                    <VolumeSlider volumeHandler={(volume) => this.props.changeVolume(volume)} />
                 </div>
             </div>
         );
@@ -101,6 +105,9 @@ const mapDispatchToProps = dispatch => {
         },
         toggleShuffle: () => {
             dispatch(actions.toggleShuffle())
+        },
+        changeVolume: (volume) => {
+            dispatch(actions.changeVolume(volume))
         }
         
     };

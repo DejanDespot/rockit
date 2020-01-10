@@ -49,6 +49,10 @@ class AudioPlayerService {
         this.soundPlayer.play();
     };
 
+    changeVolume = (volume) => {
+
+    }
+
     visualizeAudio = audioFile => {
         // console.log(new FileReader().readAsArrayBuffer(new File([""], audioFile)));
         // console.log(new File([""], audioFile));

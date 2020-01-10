@@ -53,7 +53,7 @@ export default function VolumeSlider() {
         return(
             <div className={classes.root}>   
                 {/* <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />   */}
-                <PrettoSlider min={0} max={100} defaultValue={50} step={1} valueLabelDisplay="auto" aria-label="pretto slider" />
+                <PrettoSlider min={0} max={100} defaultValue={50} step={1} valueLabelDisplay="auto" aria-label="pretto slider" onChange={(event) => props.volumeHandler(event.target.value)} />
             </div>
         );
     // }
