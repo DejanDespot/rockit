@@ -1,76 +1,60 @@
-import React, { Component } from 'react';
-// import {connect} from "react-redux";
-// import styles from '../Styles/volume_slider.scss';
-
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-// import Tooltip from '@material-ui/core/Tooltip';
-import Slider from '@material-ui/core/Slider'
-
+import React from "react";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: 200 + theme.spacing(3) * 2,
+    width: 200 + theme.spacing(3) * 2
   },
   margin: {
-    height: theme.spacing(3),
-  },
+    height: theme.spacing(3)
+  }
 }));
 
 const PrettoSlider = withStyles({
-    root: {
-      color: '#9B51E0',
-      height: 8,
-    },
-    thumb: {
-      height: 24,
-      width: 24,
-      backgroundColor: '#fff',
-      border: '2px solid currentColor',
-      marginTop: -8,
-      marginLeft: -12,
-      '&:focus,&:hover,&$active': {
-        boxShadow: 'inherit',
-      },
-    },
-    active: {},
-    valueLabel: {
-      left: 'calc(-50% + 4px)',
-    },
-    track: {
-      height: 8,
-      borderRadius: 4,
-    },
-    rail: {
-      height: 8,
-      borderRadius: 4,
-    },
+  root: {
+    color: "#9B51E0",
+    height: 8
+  },
+  thumb: {
+    height: 24,
+    width: 24,
+    backgroundColor: "#fff",
+    border: "2px solid currentColor",
+    marginTop: -8,
+    marginLeft: -12,
+    "&:focus,&:hover,&$active": {
+      boxShadow: "inherit"
+    }
+  },
+  active: {},
+  valueLabel: {
+    left: "calc(-50% + 4px)"
+  },
+  track: {
+    height: 8,
+    borderRadius: 4
+  },
+  rail: {
+    height: 8,
+    borderRadius: 4
+  }
 })(Slider);
 
 export default function VolumeSlider(props) {
-    // render() {
-
-        const classes = useStyles();
-        return(
-            <div className={classes.root}>   
-                {/* <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />   */}
-                <PrettoSlider min={0} max={100} defaultValue={50} step={1} valueLabelDisplay="auto" aria-label="pretto slider" value={Math.round(props.value * 100)} onChange={(event, value) => props.volumeHandler(value)} />
-            </div>
-        );
-    // }
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <PrettoSlider
+        min={0}
+        max={100}
+        defaultValue={50}
+        step={1}
+        valueLabelDisplay="auto"
+        aria-label="pretto slider"
+        value={Math.round(props.value * 100)}
+        onChange={(event, value) => props.volumeHandler(value)}
+      />
+    </div>
+  );
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         volumeX: state.player.volumeX
-//     };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         changeVolume: (volume) => {
-//             dispatch(actions.changeVolume(volume))
-//         }
-//     };
-// };
-
-// export default (connect(mapStateToProps, mapDispatchToProps)(VolumeSlider));
