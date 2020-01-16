@@ -40,15 +40,15 @@
         color: rgba(255, 255, 255, 0.6);
         display: flex;
         flex-direction: column;
-        padding: 0 2%;
+        padding: 0 1.5%;
         padding-top: 2%;
-        font-size: 1.25em;
+        font-size: 1em;
 
         .infoLabels {
             display: grid;
             width: 100%;
             height: 100%;
-            margin-top: 1em;
+            margin-top: 2em;
             text-transform: uppercase;
             border-bottom: 1px solid rgba(255, 255, 255, 0.8);
             grid-template-areas: "num name artist duration";
@@ -78,7 +78,7 @@
             .song {
                 display: grid;
                 width: 100%;
-                height: 50px;
+                height: 40px;
                 margin-top: 1.5em;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.8);
                 grid-template-areas: "num name artist duration";

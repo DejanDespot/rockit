@@ -18,9 +18,13 @@ const toggleDropdown = () => dispatch => {
     dispatch({ type: "TOGGLE DROPDOWN" });
 };
 
-const changeVolume = () => dispatch => {
+const change = () => dispatch => {
     dispatch({ type: "CHANGE" });
 };
 
+const changeVolume = () => dispatch => {
+    dispatch({ type: "CHANGE_VOLUME" });
+};
 
-export { togglePlay, toggleRepeat, toggleShuffle, toggleOptions, toggleDropdown, changeVolume };
+
+export { togglePlay, toggleRepeat, toggleShuffle, toggleOptions, toggleDropdown, change, changeVolume };
