@@ -8,11 +8,11 @@ class AudioPlayerService {
     constructor() {
         this.soundPlayer = null;
         this.currentSong = null;
-        this.audioContext = new AudioContext();
-        this.currentBuffer = null;
+        // this.audioContext = new AudioContext();
+        // this.currentBuffer = null;
     }
 
-    playSound = (index) => {
+    playSound = (index, volume) => {
         // pause player instance
         if (this.soundPlayer && this.currentSong === index) {
             // check if player is plauing
@@ -50,7 +50,8 @@ class AudioPlayerService {
     };
 
     changeVolume = (volume) => {
-
+        // Change global volume.
+        Howler.volume(volume);
     }
 
     visualizeAudio = audioFile => {

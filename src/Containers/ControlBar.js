@@ -57,6 +57,7 @@ class ControlBar extends Component {
 
   volumeSlider = volume => {
     this.props.changeVolume((volume / 100).toFixed(2));
+    audioPlayer.changeVolume(volume);
   };
 
   render() {
