@@ -56,7 +56,7 @@ class ControlBar extends Component {
         return (
             <div className={styles.controlBar}>
                 <img src={BackButton} className={styles.toggleButton} onClick={this.props.click}  alt="Toggle" />
-                <div className={styles.trackInfo}>Biseri od zlata • Coby</div>
+                <div className={styles.trackInfo}>Nutshell • Alice In Chains</div>
                 <img src={this.props.playing ? PauseButton: PlayButton} className={styles.play} onClick={() => this.onPlayRequested(currentSong)}/>
                 <img src={NextButton} className={styles.nextButton} onClick={() => this.onPlayRequested(currentSong + 1)} />
             </div>

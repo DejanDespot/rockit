@@ -6,7 +6,7 @@ import Pause from "../../Assets/Icons/MobileView/rounded-pause-button.svg";
 import Play from "../../Assets/Icons/MobileView/play-button-inside-a-circle.svg";
 import Next from "../../Assets/Icons/MobileView/next.svg";
 import Shuffle from "../../Assets/Icons/MobileView/shuffle.svg";
-import Playlist from "../../Assets/Images/coby.jpg";
+import Playlist from "../../Assets/Images/aic_dirt.jpg";
 import Toggle from "../../Assets/Icons/MobileView/back.svg";
 import VolumeSlider from "../VolumeSlider";
 import VolumeIcon from "../../Assets/Icons/volume.svg";
@@ -23,10 +23,10 @@ class ControlDrawer extends Component {
           <img src={Toggle} onClick={this.props.click} alt="Toggle" />
         </div>
         <div className={styles.TrackInfo}>
-          <div>Top pop 2019</div>
+          <div>best of grunge</div>
           <img src={Playlist} />
-          <div>4 strane sveta</div>
-          <div>Coby feat. senidah</div>
+          <div>down in a hole</div>
+          <div>alice in chains</div>
         </div>
         <div className={styles.Volume}>
           <img src={VolumeIcon} />

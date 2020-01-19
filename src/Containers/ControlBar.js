@@ -26,7 +26,10 @@ class ControlBar extends Component {
     });
   }
 
-  onPlayRequested = index => {
+  onPlayRequested = (index, value) => {
+    // change global volume
+    this.props.changeVolume((value / 100).toFixed(2));
+    audioPlayer.changeVolume(value);
     //
     let songIndex = index || 0;
     if (index !== undefined) {
@@ -103,7 +106,8 @@ class ControlBar extends Component {
           {/* <div className={styles.volumeBar}></div> */}
           <VolumeSlider
             value={volume}
-            volumeHandler={volume => this.volumeSlider(volume)}
+            // volumeHandler={volume => this.volumeSlider(volume)}
+            volumeHandler={value => this.onPlayRequested(value)}
           />
         </div>
       </div>

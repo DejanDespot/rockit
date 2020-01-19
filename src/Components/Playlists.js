@@ -6,9 +6,9 @@ const playlists = () => (
     <div className={styles.sideBlock}>
             <div className={styles.title}>Playlists</div>
             <p>Top Pop 2019</p>
-            <p>Metalike operite se dolje</p>
-            <p>Gaycore for sad days</p>
-            <p>Extreme workout hard boner material</p>
+            <p>Workout metal for the gym</p>
+            <p>Matt Corby Best of</p>
+            <p>DnB mashup</p>
             <div className={styles.sideGroup}>
                 <img src={addPlaylist} />
                 <div>New Playlist</div>

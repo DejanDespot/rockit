@@ -11,7 +11,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "TOGGLE PLAY":
-            return {...state, playing: action.playing ? action.playing : !state.playing, currentSong: action.index};
+            return {...state, playing: !action.playing ? action.playing : !state.playing, currentSong: action.index};
         case "TOGGLE REPEAT":
             return {...state, activeRepeat: !state.activeRepeat, activeShuffle: state.activeRepeat ? state.activeShuffle === false : null};
         case "TOGGLE SHUFFLE":

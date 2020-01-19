@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from '../Styles/sidebar.scss';
 import browseIcon from '../Assets/Icons/vinyl.svg'; 
 import libraryIcon from '../Assets/Icons/music.svg';
-import currentSong from '../Assets/Images/coby.jpg';
+import currentSong from '../Assets/Images/aic_dirt.jpg';
 
 import Playlists from '../Components/Playlists';
 

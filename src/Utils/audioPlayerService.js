@@ -47,12 +47,15 @@ class AudioPlayerService {
 
         // Play the sound.
         this.soundPlayer.play();
-    };
 
-    changeVolume = (volume) => {
         // Change global volume.
         Howler.volume(volume);
-    }
+    };
+
+    // changeVolume = (volume) => {
+    //     // Change global volume.
+    //     Howler.volume(volume);
+    // }
 
     visualizeAudio = audioFile => {
         // console.log(new FileReader().readAsArrayBuffer(new File([""], audioFile)));

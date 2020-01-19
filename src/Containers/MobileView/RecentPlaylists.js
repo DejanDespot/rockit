@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from '../../Styles/MobileView/recent_playlists.scss';
-import PlaylistImage from '../../Assets/Images/coby.jpg';
+import PlaylistImage from '../../Assets/Images/aic_dirt.jpg';
 
 class RecentPlaylists extends Component {
     render() {

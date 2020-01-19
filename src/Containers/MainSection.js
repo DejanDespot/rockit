@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../Styles/main_section.scss';
-import PlaylistImage from '../Assets/Images/coby.jpg';
+import PlaylistImage from '../Assets/Images/aic_dirt.jpg';
 import OptionsImg from '../Assets/Icons/options.svg';
 import FilterImg from '../Assets/Icons/magnifying-glass.svg';
 import Songs from '../Containers/Songs';
