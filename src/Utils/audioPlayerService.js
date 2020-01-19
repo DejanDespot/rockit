@@ -45,9 +45,6 @@ class AudioPlayerService {
 
     // Play the sound.
     this.soundPlayer.play();
-
-    // Change global volume.
-    Howler.volume(volume);
   };
 
   changeVolume = volume => {
