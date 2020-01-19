@@ -16,9 +16,9 @@ import WrapperAuto from "../Utils/WrapperAuto";
 const audioPlayer = AudioPlayerService;
 
 class MainSection extends Component {
-  onPlayRequested = index => {
+  onPlayRequested = (index, song) => {
     audioPlayer.playSound(index);
-    this.props.togglePlay(index, true);
+    this.props.togglePlay(index, true, song);
   };
 
   render() {
@@ -73,7 +73,7 @@ class MainSection extends Component {
               <div>Artist</div>
               <div>Duration</div>
             </div>
-            <Songs onPlayHandle={index => this.onPlayRequested(index)} />
+            <Songs onPlayHandle={this.onPlayRequested} />
           </div>
         </div>
       </div>
@@ -91,8 +91,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    togglePlay: (index, playing) => {
-      dispatch(actions.togglePlay(index, playing));
+    togglePlay: (index, playing, song) => {
+      dispatch(actions.togglePlay(index, playing, song));
     },
     toggleOptions: () => {
       dispatch(actions.toggleOptions());

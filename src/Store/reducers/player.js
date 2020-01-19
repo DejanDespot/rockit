@@ -14,7 +14,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         playing: !action.playing ? action.playing : !state.playing,
-        currentSong: action.index
+        currentSong: action.index,
+        activeSong: action.song
       };
     case "TOGGLE REPEAT":
       return {

@@ -29,30 +29,28 @@ class ControlBar extends Component {
   onPlayRequested = index => {
     // intialize volume
     audioPlayer.changeVolume((this.props.volume / 100).toFixed(2));
-    //
+    // define song index
     let songIndex = index || 0;
-    if (index !== undefined) {
-      // previous song
-      if (songIndex < 0) {
-        audioPlayer.playSound(songs.length - 1);
-        this.props.togglePlay(songs.length - 1, true);
+    // previous song
+    if (songIndex < 0) {
+      audioPlayer.playSound(songs.length - 1);
+      this.props.togglePlay(songs.length - 1, true, songs[songs.length - 1]);
+    }
+    // next song
+    else if (songIndex + 1 > songs.length) {
+      audioPlayer.playSound(0);
+      this.props.togglePlay(0, true, songs[0]);
+    }
+    // when no index is passed
+    else {
+      audioPlayer.playSound(songIndex);
+      // toggle when index is indentical, e.g. in case of pausing the song
+      if (this.props.currentSong === index) {
+        this.props.togglePlay(songIndex);
       }
-      // next song
-      else if (songIndex + 1 > songs.length) {
-        audioPlayer.playSound(0);
-        this.props.togglePlay(0, true);
-      }
-      // when no index is passed
+      // play song with given index
       else {
-        audioPlayer.playSound(songIndex);
-        // toggle when index is indentical, e.g. in case of pausing the song
-        if (this.props.currentSong === index) {
-          this.props.togglePlay(songIndex);
-        }
-        // play song with given index
-        else {
-          this.props.togglePlay(songIndex, true);
-        }
+        this.props.togglePlay(songIndex, true, songs[index]);
       }
     }
   };
@@ -126,8 +124,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    togglePlay: (index, playing) => {
-      dispatch(actions.togglePlay(index, playing));
+    togglePlay: (index, playing, song) => {
+      dispatch(actions.togglePlay(index, playing, song));
     },
     toggleRepeat: () => {
       dispatch(actions.toggleRepeat());

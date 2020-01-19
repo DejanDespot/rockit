@@ -1,5 +1,5 @@
-const togglePlay = (index, playing) => dispatch => {
-  dispatch({ type: "TOGGLE PLAY", index, playing });
+const togglePlay = (index, playing, song) => dispatch => {
+  dispatch({ type: "TOGGLE PLAY", index, playing, song });
 };
 
 const toggleRepeat = () => dispatch => {
