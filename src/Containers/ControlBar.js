@@ -26,10 +26,9 @@ class ControlBar extends Component {
     });
   }
 
-  onPlayRequested = (index, value) => {
-    // change global volume
-    this.props.changeVolume((value / 100).toFixed(2));
-    audioPlayer.changeVolume(value);
+  onPlayRequested = index => {
+    // intialize volume
+    audioPlayer.changeVolume((this.props.volume / 100).toFixed(2));
     //
     let songIndex = index || 0;
     if (index !== undefined) {
@@ -59,8 +58,8 @@ class ControlBar extends Component {
   };
 
   volumeSlider = volume => {
-    this.props.changeVolume((volume / 100).toFixed(2));
-    audioPlayer.changeVolume(volume);
+    this.props.changeVolume(volume);
+    audioPlayer.changeVolume((volume / 100).toFixed(2));
   };
 
   render() {
@@ -107,7 +106,7 @@ class ControlBar extends Component {
           <VolumeSlider
             value={volume}
             // volumeHandler={volume => this.volumeSlider(volume)}
-            volumeHandler={value => this.onPlayRequested(value)}
+            volumeHandler={value => this.volumeSlider(value)}
           />
         </div>
       </div>

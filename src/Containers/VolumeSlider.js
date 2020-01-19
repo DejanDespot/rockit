@@ -52,7 +52,7 @@ export default function VolumeSlider(props) {
         step={1}
         valueLabelDisplay="auto"
         aria-label="pretto slider"
-        value={Math.round(props.value * 100)}
+        value={props.value}
         onChange={(event, value) => props.volumeHandler(value)}
       />
     </div>
