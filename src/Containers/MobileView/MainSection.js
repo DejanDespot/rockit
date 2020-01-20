@@ -4,7 +4,7 @@ import styles from "../../Styles/MobileView/main_section.scss";
 import Songs from "../MobileView/Songs";
 
 import AudioPlayerService from "../../Utils/audioPlayerService";
-import * as actions from "../../store/actions/player";
+import * as actions from "../../Store/actions/player";
 import { connect } from "react-redux";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

@@ -6,7 +6,7 @@ import FilterImg from "../Assets/Icons/magnifying-glass.svg";
 import Songs from "../Containers/Songs";
 
 import AudioPlayerService from "../Utils/audioPlayerService";
-import * as actions from "../store/actions/player";
+import * as actions from "../Store/actions/player";
 import { connect } from "react-redux";
 // import songs from '../Utils/songs';
 import Options from "../Components/Options";

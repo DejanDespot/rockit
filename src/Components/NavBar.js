@@ -6,7 +6,7 @@ import Person from "../Assets/Images/person.png";
 import SearchBar from "../Containers/SearchBar";
 import classNames from "classnames";
 import { connect } from "react-redux";
-import * as actions from "../store/actions/player";
+import * as actions from "../Store/actions/player";
 import Dropdown from "../Components/Dropdown";
 
 class NavBar extends Component {

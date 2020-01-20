@@ -6,7 +6,7 @@ import PauseButton from "../../Assets/Icons/rounded-pause-button.svg";
 import PlayButton from "../../Assets/Icons/play-button-inside-a-circle.svg";
 
 import AudioPlayerService from "../../Utils/audioPlayerService";
-import * as actions from "../../store/actions/player";
+import * as actions from "../../Store/actions/player";
 import { connect } from "react-redux";
 import songs from "../../Utils/songs";
 

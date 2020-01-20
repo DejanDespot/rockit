@@ -9,7 +9,7 @@ import RepeatButton from "../Assets/Icons/repeat.svg";
 import ShuffleButton from "../Assets/Icons/shuffle.svg";
 import VolumeIcon from "../Assets/Icons/volume.svg";
 import AudioPlayerService from "../Utils/audioPlayerService";
-import * as actions from "../store/actions/player";
+import * as actions from "../Store/actions/player";
 import { connect } from "react-redux";
 import songs from "../Utils/songs";
 import VolumeSlider from "../Containers/VolumeSlider";

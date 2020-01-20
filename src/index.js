@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
-import styles from "./styles/main.scss";
+import styles from "./Styles/main.scss";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";

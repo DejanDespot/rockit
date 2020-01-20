@@ -3,7 +3,7 @@ import { hot } from "react-hot-loader/root";
 import MainView from "./Views/MainView";
 import { debounce } from "lodash";
 import { connect } from "react-redux";
-import * as actions from "./store/actions/screen";
+import * as actions from "./Store/actions/screen";
 import MobileView from "./Views/MobileView";
 
 class App extends Component {
