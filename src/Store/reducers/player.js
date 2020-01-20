@@ -5,6 +5,7 @@ const initialState = {
   activeRepeat: false,
   activeShuffle: false,
   dropdown: false,
+  activeSong: undefined,
   volumeX: 80
 };
 
@@ -15,7 +16,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         playing: action.playing ? action.playing : !state.playing,
         currentSong: action.index,
-        activeSong: action.song
+        activeSong: action.song ? action.song : state.activeSong
       };
     case "TOGGLE REPEAT":
       return {

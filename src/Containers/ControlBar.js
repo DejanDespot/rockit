@@ -45,12 +45,12 @@ class ControlBar extends Component {
     else {
       audioPlayer.playSound(songIndex);
       // toggle when index is indentical, e.g. in case of pausing the song
-      if (this.props.currentSong === index) {
-        this.props.togglePlay(songIndex);
+      if (this.props.currentSong === songIndex) {
+        this.props.togglePlay(songIndex, undefined, songs[songIndex]);
       }
       // play song with given index
       else {
-        this.props.togglePlay(songIndex, true, songs[index]);
+        this.props.togglePlay(songIndex, true, songs[songIndex]);
       }
     }
   };
