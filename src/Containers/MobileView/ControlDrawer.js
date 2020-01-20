@@ -10,6 +10,7 @@ import Playlist from "../../Assets/Images/aic_dirt.jpg";
 import Toggle from "../../Assets/Icons/MobileView/back.svg";
 import VolumeSlider from "../VolumeSlider";
 import VolumeIcon from "../../Assets/Icons/volume.svg";
+import { connect } from "react-redux";
 
 class ControlDrawer extends Component {
   render() {
@@ -17,6 +18,11 @@ class ControlDrawer extends Component {
     if (this.props.open) {
       attachedClasses = [styles.ControlDrawer, styles.Open];
     }
+    const { currentSong } = this.props;
+    const { activeRepeat } = this.props;
+    const { activeShuffle } = this.props;
+    const { volume } = this.props;
+    
     return (
       <div className={attachedClasses.join(" ")}>
         <div className={styles.ToggleButton}>
@@ -30,20 +36,58 @@ class ControlDrawer extends Component {
         </div>
         <div className={styles.Volume}>
           <img src={VolumeIcon} />
-          <VolumeSlider />
+          <VolumeSlider 
+            value={volume}
+            volumeHandler={value => this.volumeSlider(value)}/>
         </div>
         <div className={styles.TrackButtons}>
-          <img src={Repeat} />
+          <img 
+            src={Repeat} 
+            className={activeRepeat && styles.active}
+            onClick={this.props.toggleRepeat}/>
           <div className={styles.MainControls}>
             <img src={Previous} />
             <img src={Pause} />
             <img src={Next} />
           </div>
-          <img src={Shuffle} />
+          <img 
+            src={Shuffle} 
+            className={activeShuffle ? styles.active : null}
+            onClick={this.props.toggleShuffle}/>
         </div>
       </div>
     );
   }
 }
 
-export default ControlDrawer;
+const mapStateToProps = state => {
+  return {
+    playing: state.player.playing,
+    currentSong: state.player.currentSong,
+    activeRepeat: state.player.activeRepeat,
+    activeShuffle: state.player.activeShuffle,
+    volume: state.player.volumeX
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    togglePlay: (index, playing, song) => {
+      dispatch(actions.togglePlay(index, playing, song));
+    },
+    toggleRepeat: () => {
+      dispatch(actions.toggleRepeat());
+    },
+    toggleShuffle: () => {
+      dispatch(actions.toggleShuffle());
+    },
+    toggleMute: () => {
+      dispatch(actions.toggleMute());
+    },
+    changeVolume: volume => {
+      dispatch(actions.changeVolume(volume));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ControlDrawer);

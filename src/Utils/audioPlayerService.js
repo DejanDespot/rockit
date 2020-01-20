@@ -12,7 +12,7 @@ class AudioPlayerService {
     // this.currentBuffer = null;
   }
 
-  playSound = (index, volume) => {
+  playSound = (index) => {
     // pause player instance
     if (this.soundPlayer && this.currentSong === index) {
       // check if player is plauing

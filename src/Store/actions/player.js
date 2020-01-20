@@ -10,6 +10,10 @@ const toggleShuffle = () => dispatch => {
   dispatch({ type: "TOGGLE SHUFFLE" });
 };
 
+const toggleMute = () => dispatch => {
+  dispatch({ type: "TOGGLE MUTE" });
+};
+
 const toggleOptions = () => dispatch => {
   dispatch({ type: "TOGGLE OPTIONS" });
 };
@@ -30,6 +34,7 @@ export {
   togglePlay,
   toggleRepeat,
   toggleShuffle,
+  toggleMute,
   toggleOptions,
   toggleDropdown,
   change,

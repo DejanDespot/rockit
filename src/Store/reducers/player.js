@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     case "TOGGLE PLAY":
       return {
         ...state,
-        playing: !action.playing ? action.playing : !state.playing,
+        playing: action.playing ? action.playing : !state.playing,
         currentSong: action.index,
         activeSong: action.song
       };
@@ -29,6 +29,8 @@ const reducer = (state = initialState, action) => {
         activeShuffle: !state.activeShuffle,
         activeRepeat: state.activeShuffle ? state.activeRepeat === false : null
       };
+    case "TOGGLE MUTE":
+      return { ...state, volumeX: state.volumeX > 0 ? state.volumeX = 0 : state.volumeX = 80 };
     case "TOGGLE OPTIONS":
       return { ...state, optionsOpn: !state.optionsOpn };
     case "TOGGLE DROPDOWN":

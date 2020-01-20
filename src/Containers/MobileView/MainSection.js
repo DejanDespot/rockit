@@ -24,7 +24,8 @@ class MainSection extends Component {
         <div className={styles.MainSection}>
           <div className={styles.list}>
             <Switch>
-              <Route path="/" exact component={Songs} />
+              {/* <Route path="/" exact component={Songs} /> */}
+              <Route path="/" exact component={() => <Songs onPlayHandle={(index) => this.onPlayRequested(index)} />} />
               <Route path="/search" component={Search} />
             </Switch>
           </div>

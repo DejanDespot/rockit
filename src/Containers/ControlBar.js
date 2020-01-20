@@ -99,11 +99,10 @@ class ControlBar extends Component {
             src={ShuffleButton}
             onClick={this.props.toggleShuffle}
           />
-          <img src={VolumeIcon} />
+          <img src={VolumeIcon} onClick={this.props.toggleMute} />
           {/* <div className={styles.volumeBar}></div> */}
           <VolumeSlider
             value={volume}
-            // volumeHandler={volume => this.volumeSlider(volume)}
             volumeHandler={value => this.volumeSlider(value)}
           />
         </div>
@@ -132,6 +131,9 @@ const mapDispatchToProps = dispatch => {
     },
     toggleShuffle: () => {
       dispatch(actions.toggleShuffle());
+    },
+    toggleMute: () => {
+      dispatch(actions.toggleMute());
     },
     changeVolume: volume => {
       dispatch(actions.changeVolume(volume));

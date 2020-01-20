@@ -29,7 +29,7 @@ class SideBar extends Component {
         <div className={styles.sideBlock}>
           {song && (
             <React.Fragment>
-              <img src={currentSong} className={styles.songArt} />
+              <img src={song.songPic} className={styles.songArt} />
               <div className={styles.currentTrack}>
                 <div className={styles.artistName}>{song.artist}</div>
                 <div>{song.name}</div>
@@ -41,6 +41,7 @@ class SideBar extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     song: state.player.activeSong
