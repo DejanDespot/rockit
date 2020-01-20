@@ -16,8 +16,13 @@
 
 # Further plans and improvements in the future
 * The application is still under construction, some of the features that are gonna be added and changes that are gonna be made are:
-[ ] A fixed and fully working control drawer
-[ ] Option to make playlists 
-[ ] An animated timeline and time skipping of songs, as well as playing songs on repeat or shuffled
-[ ] Ability to search/filter through songs
-[ ] Fixed routing
+
+
+- [ ] Login screen.
+- [ ] Profile edit options (picture and name)
+- [ ] A fixed and stable control drawer.
+- [ ] Option to make playlists .
+- [ ] An animated timeline and time skipping of songs, as well as playing songs on repeat or shuffled.
+- [ ] Ability to search/filter through songs.
+- [ ] Stable routing.
+- [ ] WaveForm created and interpreted from the file length on which you can swipe to skip to a certain part of a song
