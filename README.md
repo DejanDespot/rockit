@@ -1,5 +1,5 @@
 # Rockit Web Audio Player
-* The project can be previewed at : [http:www.dejandespot.com].
+* The project can be previewed at : [http://www.dejandespot.com].
 
 # Installation Guide
 * Install Node and NPM on your machine if not already present.
